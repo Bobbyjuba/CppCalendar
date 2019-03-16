@@ -1,11 +1,34 @@
 #include "Event.h"
+#include <iostream>
+#include <math.h>
 
-// Default constructor shouldn't be invoked; at this point in time, I do not have a use for it
+// Default constructor shouldn't be invoked
+// An event with no name, date, time, etc. would be quite useless
 Event::Event() : name(""), date(""), time(-1), frequency(-1), repeat(false) {}
 
 Event::Event(std::string _name, std::string _date, int _time, int _frequency, bool _repeat) :
 	name(_name), date(_date), time(_time), frequency(_frequency), repeat(_repeat) {}
 
-int Event::dateParser(std::string _date) {
+// Refer to: EVENT 1A
+int Event::dateParser() {
+	int day, month, year, formattedDate = 0;
 
+	std::cout << "Please enter the month of your event: ";
+	std::cin >> month;
+
+	// Make month into a xx000000 format
+	formattedDate += (month * pow(10, 6));
+
+	std::cout << "Please enter the day of your event: ";
+	std::cin >> day;
+
+	// Make day into a yy0000 format
+	formattedDate += (day * pow(10, 4));
+
+	// Add year as the final four digits of formattedDate
+	std::cout << "Please enter the year of your event: ";
+	std::cin >> year;
+
+	// Return an integer in the format of xxyyzzzz
+	return (formattedDate += year);
 }

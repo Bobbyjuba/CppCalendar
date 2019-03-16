@@ -7,10 +7,10 @@ class Event {
 	int time, frequency;
 	bool repeat;
 
+public:
 	Event();
 	Event(std::string _name, std::string _date, int _time, int _frequency, bool _repeat);
 
-public:
-	// dateParser will convert dates from '00/00/0000' and convert them into an int
-	int dateParser(std::string _date);
+	// Refer to: EVENT 1A
+	int dateParser();
 };

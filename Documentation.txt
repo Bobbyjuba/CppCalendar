@@ -1,0 +1,37 @@
+|> EVENT 1A:
+	I am not sure what I am considering for dateParser. I was considering having the date be passed in as a string in the format
+	of "xx/xx/xxxx". The dateParser function would then format that into an integer such as xxyyzzzz where x is the day, y is the month,
+	and z is the year. The parser would add in an extra 0 or 0's if need be (such as if the date passed in was 8/3/2019, the parser 
+	would produce 08032019). But then it struck me that I could probably just make all of this a function in source.cpp, so a class function
+	isn't necessarily... well, necessary.
+
+	Any thoughts on this would be appreciated.
+
+|> SOURCE 1A: 
+	As stated above, I am leaning towards not making dateParser a strictly Event function. Rather, I will probably make dateParser a source function.
+	However, for testing purposes, I have left the implementation of dateParser in Event.cpp. This code (as of 3/16/2019) will most definitely break if you 
+	try and deviate from a xxyyzzzz date format. So... feel free to do so, but I haven't accounted for error handling yet.
+
+|> March 16, 2019 : 4:55pm
+
+	To those reviewing my code,
+
+		The primary goal of this project is to better my understanding of C++ and the proper CS coding practices, and to develop an actual
+		application. 
+	
+		This program will (hopefully, by the end) display a calendar to the user. The calender will initially be command line (yikes) and then
+		will have a graphical component in the future. The user can add events, remove events, and view their events in a list or calendar view.
+		Refer to this document for lengthy comments, which will be labeled in the code. The DEVELOPER CODE is 7. Enter 7 to begin testing the 
+		dateParser function.
+
+		Thank you,
+
+		Brian
+
+|> March 16, 2019 : 5:41pm
+
+	Entering anything aside from the developer code (at this point in time) at the main menu will result in a crash. Just a friendly reminder.
+
+	Thank you,
+
+	Brian
