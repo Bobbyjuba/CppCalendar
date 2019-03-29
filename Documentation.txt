@@ -1,4 +1,4 @@
-|> EVENT 1A:
+|> EVENT 1A: (EDITED)
 	I am not sure what I am considering for dateParser. I was considering having the date be passed in as a string in the format
 	of "xx/xx/xxxx". The dateParser function would then format that into an integer such as xxyyzzzz where x is the day, y is the month,
 	and z is the year. The parser would add in an extra 0 or 0's if need be (such as if the date passed in was 8/3/2019, the parser 
@@ -7,7 +7,11 @@
 
 	Any thoughts on this would be appreciated.
 
-|> SOURCE 1A: 
+	EDIT 1 March 29, 2019 : 4:18pm
+	I will not be returning a value of (month)(day)(year). Rather, I will return (year)(month)(day) so I can quickly sort the events in a specific
+	order that the user wants.
+
+|> SOURCE 1A: (REVOKED)
 	As stated above, I am leaning towards not making dateParser a strictly Event function. Rather, I will probably make dateParser a source function.
 	However, for testing purposes, I have left the implementation of dateParser in Event.cpp. This code (as of 3/16/2019) will most definitely break if you 
 	try and deviate from a xxyyzzzz date format. So... feel free to do so, but I haven't accounted for error handling yet.
@@ -19,7 +23,7 @@
 	acceptable to me.
 
 |> IO 1B:
-	Well, that didn't take long. Almost immediately after writing my previous doc entry, I decided I would initialize the name string as "name", and the 
+	Well, that didn't take long. Almost immediately after writing my previous Doc entry, I decided I would initialize the name string as "name", and the 
 	description string as "description". These initializations will allow me to use if-statements to check if the variable the user is currently modifiying 
 	is the event name or the event description. Again, this may not be optimal, but I do like this method more.
 
@@ -80,5 +84,14 @@
 	the things I tried implementing at the same time.
 
 	Thank you, 
+
+	Brian
+
+|> March 29, 2019 : 4:11pm
+
+	I have modified the Doc to reflect that I am no longer going to use dateParser anymore. Other than that, I have added the formattedDate function, which does the exact same thing 
+	that dateParser did, but now formattedDate belongs to the IO class.
+
+	Thank you,
 
 	Brian
