@@ -5,16 +5,17 @@
 =                                                                          =
 =   Project Title:	C++ Calendar	           Section:                    =
 =                                                                          =
-=   Current Date: 3/16/2019                    Completed Date:             =
+=   Current Date: 3/28/2019                    Completed Date:             =
 =                                                                          =
-=   Version: 1.0   						       Build:                      =
+=   Version: 1.1   						       Build:                      =
 ===========================================================================*/
 #include <iostream>
 #include "Event.h"
+#include "IO.h"
 
 void main() {
-	int menuOption, testFormat, devCode = 7;
-	Event testEvent;
+	std::string name = "description", menuOption, devCode = "7";
+
 
 	std::cout << "1. View My Events" << std::endl;
 	std::cout << "2. Add An Event" << std::endl;
@@ -22,13 +23,15 @@ void main() {
 	
 	// To test dateParser, enter 7 (the developer code)
 	std::cout << "What would you like to do? ";
-	std::cin >> menuOption;
+	std::getline(std::cin, menuOption);
 
 	// Refer to: SOURCE 1A
-	if (menuOption == devCode)
-		testFormat = testEvent.dateParser();
+	if (menuOption == devCode) {
+		std::system("CLS");
+		name = IO::stringInitial(name);
+	}
 
-	std::cout << testFormat;
+	std::cout << std::endl << name;
 
 	// I already know Sam is going to give me grief over system
 	system("pause");

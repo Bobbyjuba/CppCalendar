@@ -12,6 +12,17 @@
 	However, for testing purposes, I have left the implementation of dateParser in Event.cpp. This code (as of 3/16/2019) will most definitely break if you 
 	try and deviate from a xxyyzzzz date format. So... feel free to do so, but I haven't accounted for error handling yet.
 
+|> IO 1A:
+	As of write now, I will come up with a generic phrase for the stringInitial function. I will be able to use the function for the event's name and the event's
+	description, which are the only two pieces of information that are of type string. I am thinking that there may be a better way to do this, whether I 
+	make separate functions for each piece of information that an event has, or by doing something else. Right now, though, the generic phrase is
+	acceptable to me.
+
+|> IO 1B:
+	Well, that didn't take long. Almost immediately after writing my previous doc entry, I decided I would initialize the name string as "name", and the 
+	description string as "description". These initializations will allow me to use if-statements to check if the variable the user is currently modifiying 
+	is the event name or the event description. Again, this may not be optimal, but I do like this method more.
+
 |> March 16, 2019 : 4:55pm
 
 	To those reviewing my code,
@@ -33,5 +44,41 @@
 	Entering anything aside from the developer code (at this point in time) at the main menu will result in a crash. Just a friendly reminder.
 
 	Thank you,
+
+	Brian
+
+|> March 28, 2019 : 11:13pm
+	
+	Wow. What a terrible day. I had my wisdom teeth removed this last Monday, and as a result, I have done nothing with my life as of late. I got a new keyboard,
+	so that is pretty cool. I was making too many mistakes typing on my previous keyboard. 
+	
+	Now, to the matter at hand. I hit a roadblock last night. Well... several roadblocks, actually. I couldn't make up my mind on what features I wanted to work on for this calendar. 
+	Everytime I started working on one particular thing, another idea would pop in my head. I went from security, to hashing, to vectors within vectors (that is a good 
+	idea, though), to sorting, to I/O. I actually had to revert back to my second Github commit just because I made so many additions and changes that I got overwhelmed with 
+	trying to manually remove everything. I have conferred with sir Nathan, and I have decided that it is best to work on an I/O class that will handle all input and 
+	output as well as input check. This class is essential and will play a big role in the overall project, so I think it is best to get this class done and working before 
+	proceeding with anything else.
+
+	This I/O class will most likely be static. I don't need an instance of this class. Rather, I just need a place to put all of my I/O functions and logic. But, as per 
+	the norm, I will dwell on this decision and consult with my coder buddies later. 
+
+	Thank you,
+
+	Brian
+
+|> March 29, 2019 : 12:31am
+
+	I have finished the first function in my IO class. I have tested it for a few minutes, and all seems well. I will test it more extensively later. I think it is suitable for my needs 
+	right now. There are a few things I had to do differently than I anticipated. I kept running into the \n problem, where the newline character would be entered as the value for a 
+	variable unintendedly. I didn't have that problem with my string variable, as I used getline to prevent this problem. I encountered the problem with my char variable. I hadn't expected 
+	to run into this issue with a char variable, as I presumed using getchar would solve this issue, too. The problem wasn't fixable (for me at least), so I opted to use a string in place 
+	of my char variabe and convert the string to lowercase, which worked out better for me in the end. I can accept Y, yes, N, no, and all of the possible combinations of capitals and 
+	lowercases for these inputs, now that I am using a string for my char variable.
+
+	Oh, by the way, I now have a use for the Event default constructor! I will set name and description to "name" and "description", respectively. Doing so will let me know which variable the
+	user is initially writing into when they are creating an event. This worked out really well for me. I needed this, too. Got too burnt out last night (two days ago, technically...) with all
+	the things I tried implementing at the same time.
+
+	Thank you, 
 
 	Brian
