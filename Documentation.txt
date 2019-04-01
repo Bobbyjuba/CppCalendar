@@ -11,7 +11,7 @@
 	I will not be returning a value of (month)(day)(year). Rather, I will return (year)(month)(day) so I can quickly sort the events in a specific
 	order that the user wants.
 
-|> SOURCE 1A: (REVOKED)
+|> SOURCE 1A: (REDACTED)
 	As stated above, I am leaning towards not making dateParser a strictly Event function. Rather, I will probably make dateParser a source function.
 	However, for testing purposes, I have left the implementation of dateParser in Event.cpp. This code (as of 3/16/2019) will most definitely break if you 
 	try and deviate from a xxyyzzzz date format. So... feel free to do so, but I haven't accounted for error handling yet.
@@ -90,7 +90,28 @@
 |> March 29, 2019 : 4:11pm
 
 	I have modified the Doc to reflect that I am no longer going to use dateParser anymore. Other than that, I have added the formattedDate function, which does the exact same thing 
-	that dateParser did, but now formattedDate belongs to the IO class.
+	that dateParser did, but now formattedDate() belongs to the IO class.
+
+	Thank you,
+
+	Brian
+
+|> March 31, 2019 : 10:28pm
+
+	I have edited both Source.cpp and the IO class such that the main-menu is now a function, and the ability to clear the screen without calling System is a function in the IO class.
+	The main-menu isn't working as expected. The Window is closing, even when starting the program without debugging. I believe this has something to do with my switch-statement. 
+	I will address this later.
+
+	Thank you,
+
+	Brian
+
+|> March 31, 2019 : 10:43pm
+
+	Having given it some thought, I decided to make a function to print out a line of hyphens. This feature certainly adds to readability and I think, overall, will add to the usability.
+	I decided I won't ask for input on the same line that I am outputting, so that I can just call the newLineSpace() function in the IO class and print out a line to separate input and 
+	output. I am considering creating a separate text file called Log.txt, where I will move all of these commentative Doc entries. The extended comments will remain in their own, separate 
+	text file. I might do this before the next commit.
 
 	Thank you,
 
